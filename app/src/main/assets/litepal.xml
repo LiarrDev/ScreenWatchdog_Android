@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="ToggleTime" />
+    <version value="2" />
+
+    <list>
+        <mapping class="com.liarr.screenwatchdog.ResumeTime" />
+        <mapping class="com.liarr.screenwatchdog.PauseTime" />
+    </list>
+</litepal>
