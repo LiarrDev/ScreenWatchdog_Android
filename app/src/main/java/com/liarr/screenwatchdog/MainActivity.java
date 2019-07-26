@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
     List<String> resumeList = new ArrayList<>();
     List<String> pauseList = new ArrayList<>();
 
+    ArrayAdapter<String> resumeAdapter;
+    ArrayAdapter<String> pauseAdapter;
+
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @Override
@@ -100,8 +103,8 @@ public class MainActivity extends AppCompatActivity {
             pauseList.add(pauseTime);
         }
 
-        ArrayAdapter<String> resumeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, resumeList);
-        ArrayAdapter<String> pauseAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, pauseList);
+        resumeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, resumeList);
+        pauseAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, pauseList);
 
         resumeListView.setAdapter(resumeAdapter);
         pauseListView.setAdapter(pauseAdapter);
