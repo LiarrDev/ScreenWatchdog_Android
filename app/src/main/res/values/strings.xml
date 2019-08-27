@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Screen Watchdog</string>
+    <string name="on_resume_header">onResume()</string>
+    <string name="on_pause_header">onPause()</string>
 </resources>

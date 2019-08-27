@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="onResume()" />
+            android:text="@string/on_resume_header" />
 
         <ListView
             android:id="@+id/resume_list"
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="onPause()" />
+            android:text="@string/on_pause_header" />
 
         <ListView
             android:id="@+id/pause_list"
