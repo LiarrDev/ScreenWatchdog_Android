@@ -1,17 +1,23 @@
-package com.liarr.screenwatchdog;
+package com.liarr.screenwatchdog.View;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
+import com.liarr.screenwatchdog.Database.PauseTime;
+import com.liarr.screenwatchdog.Database.ResumeTime;
+import com.liarr.screenwatchdog.R;
+import com.liarr.screenwatchdog.Util.LogUtil;
 
 import org.litepal.LitePal;
 
@@ -60,8 +66,7 @@ public class MainActivity extends AppCompatActivity {
                                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
-                                        LitePal.deleteAll(ResumeTime.class);
-                                        LitePal.deleteAll(PauseTime.class);
+                                        deleteData();
                                     }
                                 })
                                 .setNegativeButton("Cancel", null)
@@ -86,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         resumeToggle = new ResumeTime();
         resumeToggle.setResumeDate(resumeDate);
         resumeToggle.save();
-        Log.e("===RESUME===", simpleDateFormat.format(resumeDate));
+        LogUtil.d("===RESUME===", simpleDateFormat.format(resumeDate));
 
         resumeList.clear();
         pauseList.clear();
@@ -121,7 +126,15 @@ public class MainActivity extends AppCompatActivity {
         pauseToggle = new PauseTime();
         pauseToggle.setPauseDate(pauseDate);
         pauseToggle.save();
-        Log.e("===PAUSE===", simpleDateFormat.format(pauseDate));
+        LogUtil.d("===PAUSE===", simpleDateFormat.format(pauseDate));
         super.onPause();
+    }
+
+    /**
+     * 删除数据
+     */
+    private void deleteData() {
+        LitePal.deleteAll(ResumeTime.class);
+        LitePal.deleteAll(PauseTime.class);
     }
 }

@@ -1,4 +1,4 @@
-package com.liarr.screenwatchdog;
+package com.liarr.screenwatchdog.Database;
 
 import org.litepal.crud.LitePalSupport;
 

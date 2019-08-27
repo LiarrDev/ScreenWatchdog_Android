@@ -1,6 +1,5 @@
-package com.liarr.screenwatchdog;
+package com.liarr.screenwatchdog.View;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
@@ -8,12 +7,16 @@ import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ProgressBar;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.ContentLoadingProgressBar;
+
+import com.liarr.screenwatchdog.R;
 
 public class WebActivity extends AppCompatActivity {
 
     WebView webView;
-    ProgressBar progressBar;
+    ContentLoadingProgressBar progressBar;
 
     String blogUrl = "https://liarrdev.github.io";
 

@@ -4,7 +4,7 @@
     <version value="2" />
 
     <list>
-        <mapping class="com.liarr.screenwatchdog.ResumeTime" />
-        <mapping class="com.liarr.screenwatchdog.PauseTime" />
+        <mapping class="com.liarr.screenwatchdog.Database.ResumeTime" />
+        <mapping class="com.liarr.screenwatchdog.Database.PauseTime" />
     </list>
 </litepal>
